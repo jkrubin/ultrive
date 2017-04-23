@@ -15,8 +15,7 @@
 				<br>
 			<% end %>
 
-			<% @users = User.all
-			@users.each do |user| %>
+			<%@users.each do |user| %>
 				<p> user:<%= user.name %> </p>
 			<% end %>
 
