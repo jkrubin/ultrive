@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 	layout 'header'
   def home
-  	#render "layouts/header"
+  	@users = User.all
   end
 
   def help
