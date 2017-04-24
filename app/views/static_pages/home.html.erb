@@ -6,28 +6,29 @@
 <body>
 
 <div id = "main-container" class="container">
-	<div class="row">
-		<div class = col-xs-4>
-			<h3>TESTINGGGG</h3>
 
-			<% 1.times do %>
-				<p> content</p>
-				<br>
-			<% end %>
+	<h3>TESTINGGGG</h3>
+	<!-- FILL THE PAGE WITH n DUMMY CONTENT--> 
+	<% 1.times do %>
+		<p> content</p>
+		<br>
+	<% end %>
 
-			<%@users.each do |user| %>
-				<p> user:<%= user.name %> </p>
-			<% end %>
+	<!-- test users db-->
+	<% @users.each do |user| %>
+		<p> user:<%= user.name %> </p>
+	<% end %>
 
-			<% @users %>
-
-		</div>
-
+	<!-- test product db-->
+	<div class = "row">
+		<% @products.each do |product| %> 
+			<div class="col-xs-4" id="product">
+				<%= product.name %>
+			</div>
+		<% end %>
 	</div>
 
-
 </div>
-
 
 </body>
 </html>
