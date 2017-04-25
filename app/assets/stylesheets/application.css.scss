@@ -16,6 +16,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face {
+	font-family: 'bebas';
+	src:font-url('BebasNeueRegular.otf');
+	src:font-url('BebasNeueBold.otf');
+}
+
+@font-face {
+	font-family: 'bebas';
+	src:font-url('BebasNeueRegular.ttf');
+	src:font-url('BebasNeueBold.ttf');
+}
+
 #product {
 	border: 2px solid #ccc;
+}
+
+body {
+	padding-top: 100px;
 }

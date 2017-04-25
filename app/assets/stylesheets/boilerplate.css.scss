@@ -1,0 +1,36 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@font-face {
+	font-family: 'bebas';
+	src:font-url('BebasNeueRegular.otf');
+	src:font-url('BebasNeueBold.otf');
+}
+
+@font-face {
+	font-family: 'bebas';
+	src:font-url('BebasNeueRegular.ttf');
+	src:font-url('BebasNeueBold.ttf');
+}
+
+.nav_logo {
+	height: 100px;
+	padding-top: 0;
+}
+
+.navbar-text{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#logo-text{
+	font-family: "bebas", "Times New Roman";
+	font-size: 50px;
+	padding-top: 50px;
+}
+
+#header.container{
+	height: 100px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
