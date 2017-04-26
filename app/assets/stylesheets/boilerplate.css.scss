@@ -23,16 +23,57 @@
 .navbar-text{
 	margin-top:0px;
 	margin-bottom:0px;
+	padding-top: 50px;
 }
 
 #logo-text{
 	font-family: "bebas", "Times New Roman";
 	font-size: 50px;
-	padding-top: 50px;
 }
 
 #header.container{
 	height: 100px;
 	padding-top: 0px;
 	padding-bottom: 0px;
+}
+
+@media only screen and (min-width: 420px) {
+    .collapse {
+        display: block;
+    }
+
+    .navbar-header {
+        float: left;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .navbar-nav.navbar-left {
+       float: left;
+       margin: 0;
+    }
+
+    .navbar-nav.navbar-right {
+       float: right;
+       margin: 0;
+    }
+    .navbar-nav>li {
+        float: left;
+    }
+    .navbar-nav>li>a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+     .collapse {
+        display: none;
+     }
+
+     .navbar-header {
+        display: block;
+     }
 }
