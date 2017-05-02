@@ -4,7 +4,7 @@ class CreateCartItems < ActiveRecord::Migration[5.0]
     create_table :cart_items do |t|
       t.integer :product_id
       t.integer :cart_id
-      t.float :price
+      t.decimal :price
       t.integer :amount
       t.datetime :created_at
 
