@@ -11,7 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @current_cart
+    set_price
     @catalog = Product.all
     @current_cart_items = @current_cart.cart_items
   end
@@ -66,7 +66,7 @@ class CartsController < ApplicationController
   end
 
   def set_price
-    @current_cart.update_price
+    @current_cart.update_and_save
   end
   helper_method :set_price
 

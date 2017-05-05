@@ -24,17 +24,22 @@ class CartItemsController < ApplicationController
   # POST /cart_items
   # POST /cart_items.json
   def create
-    @cart_item = CartItem.new(cart_item_params)
+    @cart = current_cart
+    @cart_item = @cart.cart_items.new(cart_item_params)
+    @cart.save
+    session[:cart_id] = @cart.id
+    
+    #@cart_item = CartItem.new(cart_item_params)
 
-    respond_to do |format|
-      if @cart_item.save
-        format.html { redirect_to @cart_item, notice: 'Cart item was successfully created.' }
-        format.json { render :show, status: :created, location: @cart_item }
-      else
-        format.html { render :new }
-        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @cart_item.save
+    #    format.html { redirect_to @cart_item, notice: 'Cart item was successfully created.' }
+    #    format.json { render :show, status: :created, location: @cart_item }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @cart_item.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /cart_items/1

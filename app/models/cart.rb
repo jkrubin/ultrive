@@ -6,6 +6,7 @@ class Cart < ApplicationRecord
 		price=0
 		cart_items.each do |item|
 			if item.valid?
+				#price = 100
 				price+= item.total_price * item.amount
 			end
 		end	
@@ -13,6 +14,14 @@ class Cart < ApplicationRecord
 	end
 
 	def update_price
+		#new_price = total_price
+		#self.update_attributes!(price: 80.1)
 		self[:price] = total_price
+		#self.save
+	end
+
+	def update_and_save
+		self[:price] = total_price
+		self.save
 	end
 end

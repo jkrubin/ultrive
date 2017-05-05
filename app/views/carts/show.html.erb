@@ -7,18 +7,13 @@
 	
 <% end %>
 
+<% @current_cart.update_price %>
+<p> <%= @current_cart.id %></p>
 <p><%= @current_cart.price %></p>
+
 
 
 <p>
   <strong>Price:</strong>
   <%= @cart.price %>
 </p>
-
-<p>
-  <strong>Float:</strong>
-  <%= @cart.float %>
-</p>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
