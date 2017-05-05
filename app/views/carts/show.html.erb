@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
+
+
 <% set_price %>
+
+
 <% @current_cart_items.each do |cart_item| %>
 	<% @item_product = @catalog.where(product_id: cart_item.product_id)%>
 
-	<p> product: <%= @item_product.first.description %> </p>
+	<p> 
+		product: <%= @item_product.first.description %> 
+		<%= link_to "Delete", cart_item, {method: :delete, remote: true, class: "btn"} %>
+	</p>
 	
 <% end %>
 
