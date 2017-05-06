@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
-  get 'myCart', :to => 'carts#index'
+  get 'myCart', :to => 'carts#index', as: "mycart"
 
-  get 'shop', :to => 'products#index'
+  get 'shop', :to => 'products#index', as: "shop"
 
   resources :microposts
   resources :users

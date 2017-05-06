@@ -12,6 +12,9 @@ class CartsController < ApplicationController
     @current_cart_items = @current_cart.cart_items
   end
 
+  def mycart
+  end
+
   # GET /carts/1
   # GET /carts/1.json
   def show

@@ -1,9 +1,14 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-toggleable-xl">
 	<div class="container" id="header">
 		<ul class = "nav navbar-nav">
-			<li><%= image_tag "logo.jpeg", :class => "nav_logo" %></li>
-			<li><p class="navbar-text" id="logo-text">ULTRIVE</p></li>
-			<li> <a class = "navbar-text" href="#">Shop</a></li>
+			<li><%= link_to root_path do
+				image_tag ("logo.jpeg"), class: "nav_logo" 
+			end%></li>
+			<li><%= link_to root_path do %>
+				<p class="navbar-text" id="logo-text">ULTRIVE</p>
+			<% end -%></li>
+			<li><%= link_to "Shop", shop_path, class: "navbar-text" %> </li>
+			<li><%= link_to "my Cart", mycart_path, class: "navbar-text" %> </li>
 
 		</ul>
 		<!--

@@ -15,6 +15,9 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def shop
+  end
+
   # GET /products/new
   def new
     @product = Product.new
