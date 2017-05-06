@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :initialize_cart
+
+  layout 'header'
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
-    @cart_item = current_cart.cart_items.new
+    @cart_item = @current_cart.cart_items.new
   end
 
   # GET /products/1

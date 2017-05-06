@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
+  get 'myCart', :to => 'carts#index'
+
+  get 'shop', :to => 'products#index'
+
   resources :microposts
   resources :users
   	root 'static_pages#home'
