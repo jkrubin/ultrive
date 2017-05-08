@@ -2,13 +2,13 @@
 	<div class="container" id="header">
 		<ul class = "nav navbar-nav">
 			<li><%= link_to root_path do
-				image_tag ("logo.jpeg"), class: "nav_logo" 
+				image_tag ("logo.jpeg"), class: "nav_logo nav_link" 
 			end%></li>
 			<li><%= link_to root_path do %>
 				<p class="navbar-text" id="logo-text">ULTRIVE</p>
 			<% end -%></li>
-			<li><%= link_to "Shop", shop_path, class: "navbar-text" %> </li>
-			<li><%= link_to "my Cart", mycart_path, class: "navbar-text" %> </li>
+			<li><%= link_to "Shop", shop_path, class: "navbar-text nav_button" %> </li>
+			<li><%= link_to "my Cart", mycart_path, class: "navbar-text nav_button" %> </li>
 
 		</ul>
 		<!--
