@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @current_cart = 
+    @cart = @current_cart
     @products = Product.all
     @cart_item = CartItem.new
   end
