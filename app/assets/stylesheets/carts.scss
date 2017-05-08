@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cart_row{
+	padding-left: 25px;
+	display: flex;
+	align-items: center;
+}
+
+.cart_row_container{
 	border: 2px solid #ccc;	
+
+}
+
+div p {
+	margin-bottom:0;
 }
 
