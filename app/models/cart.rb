@@ -6,8 +6,7 @@ class Cart < ApplicationRecord
 		price=0
 		cart_items.each do |item|
 			if item.valid?
-				#price = 100
-				price+= item.total_price * item.amount
+				price+= item.total_price
 			end
 		end	
 		return price

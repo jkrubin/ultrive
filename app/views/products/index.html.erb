@@ -1,8 +1,12 @@
 <div id= "main-container" class="container">
 
+  <h1>SHOP</h1>
   <div class = "row product_row">
     <% @products.each do |product| %> 
       <div class="col-xs-6 col-sm-4" id="product">
+
+        <h2> <%= product.name %> </h2>
+        <p> <%= product. description %></p>
 
         <%= form_for(@cart_item) do |f| %>
           <% if @cart_item.errors.any? %>
@@ -30,7 +34,7 @@
           </div>
 
           <div class="actions">
-            <%= f.submit %>
+            <%= f.submit "Add to cart", class: "btn btn-primary" %>
           </div>
         <% end %>
 
@@ -40,13 +44,8 @@
   </div>
 </div>
 
-<p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
-
-
-
-
+<!--
 <table>
   <thead>
     <tr>
@@ -77,4 +76,7 @@
 
 <br>
 
+
+
 <%= link_to 'New Product', new_product_path %>
+-->

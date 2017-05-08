@@ -1,16 +1,32 @@
+<% @current_cart.update_price %>
 
 <h1>My cart</h1>
 
 <% @current_cart_items.each do |cart_item| %>
   <% @item_product = @catalog.where(product_id: cart_item.product_id)%>
-
-  <p> 
-    product: <%= @item_product.first.description %> 
-    <%= link_to "Delete", cart_item, {method: :delete, class: "btn"} %>
-  </p>
-  
+  <div class="containter">
+	  <div class="row cart_row">
+	  	<div class="col-xs-2 align-self-center">
+	  		<h2> <%= @item_product.first.name %> </h2>
+	  	</div>
+	  	<div class="col-xs-1 align-self-center">
+	  		<p>qty: <%= cart_item.amount %></p>
+	  	</div>
+	  	<div class=" col-xs-3 align-self-center">
+	  		<p>unit price <%= cart_item.total_price %> </p>
+	  	</div>
+	  	<div class="col-xs-2 align-self-center">
+	  		<%= link_to "Delete", cart_item, {method: :delete, class: "btn"} %>
+	  	</div>
+	  </div>
+	  <p> 
+	    product: <%= @item_product.first.description %> 
+	    <%= link_to "Delete", cart_item, {method: :delete, class: "btn"} %>
+	  </p>
+	  </div>
 <% end %>
 
-<% @current_cart.update_price %>
-<p> <%= @current_cart.id %></p>
-<p><%= @current_cart.price %></p>
+
+<h3> Total price: <%= @current_cart.price %></h3>
+
+<p>Cart ID (testing only):  <%= @current_cart.id %></p>
