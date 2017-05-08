@@ -9,7 +9,7 @@ class CartItem < ApplicationRecord
 	end
 
 	def total_price
-		price * amount
+		product.price * amount
 	end
 
 

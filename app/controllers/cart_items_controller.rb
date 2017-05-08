@@ -24,10 +24,9 @@ class CartItemsController < ApplicationController
   # POST /cart_items
   # POST /cart_items.json
   def create
-    @cart = current_cart
-    @cart_item = @cart.cart_items.new(cart_item_params)
-    @cart.save
-    session[:cart_id] = @cart.id
+    @cart = @current_cart
+    @cart_item = CartItem.new(cart_item_params)
+    @cart_item.save
     
     #@cart_item = CartItem.new(cart_item_params)
 
@@ -66,11 +65,8 @@ class CartItemsController < ApplicationController
   # DELETE /cart_items/1.json
   def destroy
     @cart_item.destroy
-    respond_to do |format|
-      format.html { redirect_to cart_items_url, notice: 'Cart item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+    redirect_to :back
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,3 +1,16 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.product_row{
+	padding-top: 75px;
+	padding-left: 8%;
+	padding-right: 8%;
+}
+
+#product{
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 30px;
+	border: 2px solid #ccc;
+
+}
