@@ -1,7 +1,15 @@
 class CartsController < ApplicationController
+  require "rubygems"
+  require "braintree"
+
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   before_action :initialize_cart
   layout 'header'
+
+  Braintree::Configuration.environment = :sandbox
+  Braintree::Configuration.merchant_id = "w53gzpphhc8mg92k"
+  Braintree::Configuration.public_key = "46pmd6brs7qr24sj"
+  Braintree::Configuration.private_key = "6e3ab429207adb42299697ba23597ead"
 
   # GET /carts
   # GET /carts.json
@@ -10,6 +18,7 @@ class CartsController < ApplicationController
     set_price
     @catalog = Product.all
     @current_cart_items = @current_cart.cart_items
+    @token = Braintree::ClientToken.generate
   end
 
   def mycart
