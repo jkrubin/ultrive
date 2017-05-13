@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'shop', :to => 'products#index', as: "shop"
 
+  post 'checkout', to: 'carts#checkout'
+
   resources :microposts
   resources :users
   	root 'static_pages#home'

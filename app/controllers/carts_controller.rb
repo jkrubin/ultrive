@@ -18,10 +18,31 @@ class CartsController < ApplicationController
     set_price
     @catalog = Product.all
     @current_cart_items = @current_cart.cart_items
-    @token = Braintree::ClientToken.generate
+    @client_token = Braintree::ClientToken.generate
   end
 
   def mycart
+  end
+
+  def checkout
+    amount = params["amount"] # In production you should not take amounts directly from clients
+    nonce = params["payment_method_nonce"]
+
+    result = Braintree::Transaction.sale(
+      amount: amount,
+      payment_method_nonce: nonce,
+      :options => {
+        :submit_for_settlement => true
+      }
+    )
+
+    if result.success? || result.transaction
+      #redirect_to checkout_path(result.transaction.id)
+    else
+      error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
+      flash[:error] = error_messages
+      #redirect_to new_checkout_path
+    end
   end
 
   # GET /carts/1

@@ -36,4 +36,38 @@
 <br><br>
 
 <h3>Checkout: <br></h3>
+
+<%= csrf_meta_tags %>
+
+
+<%= form_tag("/checkout", method: "post", id: "payment-form") do %>
+	<section>
+		<div class="bt-drop-in-wrapper">
+		  <div id="bt-dropin"></div>
+		</div>
+
+        <label for="amount">
+          <span class="input-label">Amount</span>
+          <div class="input-wrapper amount-wrapper">
+            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+          </div>
+        </label>
+    </section>
+
+        <button class="button" type="submit"><span>Test Transaction</span></button>
+<% end %>
+
+
 <script src="https://js.braintreegateway.com/js/braintree-2.32.0.min.js"></script>
+
+<script>
+  (function () {
+    var checkout = new Demo({
+      formID: 'payment-form'
+    });
+    var client_token = "<%= @client_token %>";
+    braintree.setup(client_token, "dropin", {
+      container: "bt-dropin"
+    });
+  })()
+</script>
